@@ -1,0 +1,4 @@
+FROM nginx
+
+
+COPY dist/angular-keyclock /usr/share/nginx/html

@@ -26,7 +26,7 @@ import {LoginComponent} from './login/login.component';
     KeycloakAngularModule
   ],
   providers: [
-    {
+  {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,

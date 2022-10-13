@@ -30,12 +30,6 @@ export class AppComponent implements OnInit{
   }
 
   onClick() {
-this.keycloakAngular.logout("http://localhost:4200/");
-    console.log(window.sessionStorage)
-    console.log(window.localStorage)
-    console.log("cookies"+document.cookie)
-window.sessionStorage.removeItem('isLoggedIn');
-
-//window.caches.
+this.keycloakAngular.logout("http://localhost/");
   }
 }
