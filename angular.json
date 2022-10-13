@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "AngularKeyclock"
+  "cli": {
+    "analytics": "022c6e59-9c26-458c-91f9-d39bbc35b0c3"
+  }
 }
