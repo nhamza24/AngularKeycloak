@@ -1,7 +1,8 @@
 {
   "posts": [
     { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "Pro Git", "author": "Scott Chacon and Ben Staub" }
+    { "id": 2, "title": "Pro Git", "author": "Scott Chacon and Ben Staub" },
+    { "id": 3, "title": "Entwurfsmuster", "author": "Matthias Geirhos" }
   ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 },
