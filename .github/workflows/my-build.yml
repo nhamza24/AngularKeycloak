@@ -8,5 +8,5 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - name: Run ng build
-          run: ng build
+          run: echo Hello Word
 
