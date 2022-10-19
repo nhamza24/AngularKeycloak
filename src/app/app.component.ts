@@ -16,7 +16,7 @@ author:string
 })
 export class AppComponent implements OnInit{
 
-  constructor(private httpClient:HttpClient, private  readonly keycloakAngular: KeycloakService) {
+  constructor( private  readonly keycloakAngular: KeycloakService) {
   }
   title = 'AngularKeyclock';
 
