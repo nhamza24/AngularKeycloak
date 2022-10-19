@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                sh 'ls'
-                sh 'npm run build'
+                sh 'sudo apt-get install npm && npm run build'
             }
         }
         stage('Test') {
