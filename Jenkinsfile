@@ -1,8 +1,6 @@
 pipeline {
     agent any
-   nodejs(cacheLocationStrategy: workspace()) {
-       // some block
-   }
+
     stages {
 
         stage('Build') {
