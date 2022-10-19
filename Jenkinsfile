@@ -15,7 +15,7 @@ node {
                         sh 'npm config ls'
                     }
                 }
-
+}
         stage('Build') {
             steps {
                 echo 'Building..'
