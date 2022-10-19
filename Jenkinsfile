@@ -1,13 +1,14 @@
 pipeline {
     agent any
+   nodejs(cacheLocationStrategy: workspace()) {
+       // some block
+   }
     stages {
 
         stage('Build') {
             steps {
             echo  'Building ..'
-                echo  $JENKINS_HOME
-               sh 'ls'
-                sh 'sudo apt-get install npm && npm run build'
+            npm 'run build'
             }
         }
         stage('Test') {
