@@ -32,15 +32,6 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-   junitReporter: {
-          outputDir: '',
-        outputFile: undefined,
-        suite: '',
-         useBrowserName: true,
-         nameFormatter: undefined,
-        classNameFormatter: undefined,
-       properties: {}
-      },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
@@ -50,5 +41,4 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true
   });
-
 };
