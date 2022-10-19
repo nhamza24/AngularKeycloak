@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                ls
-                npm run build
+               sh 'ls'
+                sh 'npm run build'
             }
         }
         stage('Test') {
