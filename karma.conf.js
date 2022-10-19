@@ -32,7 +32,7 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-/*    junitReporter: {
+   junitReporter: {
           outputDir: '',
         outputFile: undefined,
         suite: '',
@@ -40,7 +40,7 @@ module.exports = function (config) {
          nameFormatter: undefined,
         classNameFormatter: undefined,
        properties: {}
-      },*/
+      },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
