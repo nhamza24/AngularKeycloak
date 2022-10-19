@@ -6,8 +6,8 @@ pipeline {
         stage('Build') {
             steps {
             echo  'Building ..'
-            npm 'run build'
             npm 'install -g @angular/cli@latest'
+            npm 'run build'
             }
         }
         stage('Test') {
