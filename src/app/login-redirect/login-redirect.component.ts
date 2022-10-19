@@ -10,6 +10,7 @@ export class LoginRedirectComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("onInit LoginRedirectComponent");
   }
 
 }

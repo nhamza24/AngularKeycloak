@@ -14,20 +14,12 @@ author:string
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
   constructor( private  readonly keycloakAngular: KeycloakService) {
   }
   title = 'AngularKeyclock';
 
-  ngOnInit(){
-/*this.httpClient.get('http://localhost:3000/posts').subscribe(data=>{
-  let data1 = <Entry[]>data;
-  console.log(data1);
-  console.log(data1[0].title);
-  this.title=data1[0].title;
-})*/
-  }
 
   onClick() {
 this.keycloakAngular.logout("http://localhost:4200/");
