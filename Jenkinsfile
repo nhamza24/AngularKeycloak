@@ -1,16 +1,11 @@
 pipeline {
     agent any
     stages {
-    stage('PreBuild') {
-                steps {
-                    nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-                        sh 'npm config ls'
-                    }
-                }
-}
+
         stage('Build') {
             steps {
-                echo 'Building..'
+            echo  'Building ..'
+                echo  $JENKINS_HOME
                sh 'ls'
                 sh 'sudo apt-get install npm && npm run build'
             }
