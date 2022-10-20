@@ -14,10 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                 sh 'export CHROME_BIN=/usr/bin/google-chrome'
-                 echo $CHROME_BIN
-                    npm 'run test'
-                   }
+                  }
         }
         stage('Deploy') {
             steps {
