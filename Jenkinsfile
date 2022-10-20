@@ -14,7 +14,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                 npm 'run test'
+               docker.image('angular/ngcontainer').inside {
+
+                    npm run test
+
+               }
             }
         }
         stage('Deploy') {
