@@ -20,8 +20,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-               sh 'scp dist/angular-keyclock firstuser@nginxserver:/usr/share/nginx/html'
-            }
+               sh ' sshpass -p "1234567" scp dist/angular-keyclock firstuser@nginxserver:/usr/share/nginx/html'
+                   }
         }
     }
 }
