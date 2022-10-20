@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-
+                sh 'scp dist/angular-keyclock nginxserver:/usr/share/nginx/html'
             }
         }
     }
