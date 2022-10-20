@@ -20,8 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'apt install openssh-server'
-                sh 'scp dist/angular-keyclock admin@nginxserver:/usr/share/nginx/html'
+               sh 'scp dist/angular-keyclock admin@nginxserver:/usr/share/nginx/html'
             }
         }
     }
