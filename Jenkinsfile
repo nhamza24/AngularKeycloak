@@ -1,6 +1,9 @@
 pipeline {
     agent any
+environment {
 
+        CHROME_BIN='/usr/bin/google-chrome'
+    }
     stages {
 
         stage('Build') {
@@ -13,7 +16,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                  echo 'Testing..'
+                   npm 'run test'
                   }
         }
         stage('Deploy') {
