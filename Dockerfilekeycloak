@@ -1,0 +1,4 @@
+FROM quay.io/keycloak/keycloak:19.0.3
+COPY kctorabbitmq /opt/keycloak/providers/
+COPY keycloack_config /config
+

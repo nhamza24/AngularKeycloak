@@ -7,5 +7,3 @@
     --keycloak.availability-check.timeout=120 \
     --keycloak.connect-timeout=10 \
     --import.files.locations=/config/keycloak_config.json
-
-#./opt/keycloak/bin/kc.sh start-dev &  sleep 120 &&
