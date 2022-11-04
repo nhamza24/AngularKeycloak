@@ -1,6 +1,6 @@
 # AngularKeyclock
 Manage access to a web application based on the Keycloak json web tokens.
-Implement a navigation built on Routing, Guards and Keycloak role based authorisation.
+Implement a navigation built on Routing, Guards and role based authorisation.
 Istablish a Communication channel to keycloak with Rabbit Mq to update users list and roles on capturing the User create/update/delete Events.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
