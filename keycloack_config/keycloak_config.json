@@ -64,7 +64,7 @@
   ],
   "users": [
     {
-      "username": "myuser",
+      "username": "tcmuser",
       "email": "myuser@mail.de",
       "enabled": true,
       "firstName": "My firstname",
@@ -90,7 +90,7 @@
       }
     },
     {
-      "username": "admin",
+      "username": "tcmadmin",
       "email": "admin@mail.de",
       "enabled": true,
       "firstName": "adminFirstName",

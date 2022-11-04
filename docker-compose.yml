@@ -20,23 +20,28 @@ services:
     environment:
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
+        KK_TO_RMQ_URL: rabbitmq
+        KK_TO_RMQ_PORT: 5672
+        KK_TO_RMQ_VHOST: '/'
+        KK_TO_RMQ_EXCHANGE: amq.topic
+        KK_TO_RMQ_USERNAME: guest
+        KK_TO_RMQ_PASSWORD: guest
+        KK_TO_RMQ_USE_TLS: false
     volumes:
       - .\keycloack_config:/config
     ports:
       - "8080:8080"
     command: start-dev
 
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    depends_on:
+      - keycloak
 
-  #kc_config:
-   # container_name: runImport
-   # image: adorsys/keycloak-config-cli:latest
-   # environment:
-   #   KEYCLOAK_URL: http://keycloak:8080/
-    #  KEYCLOAK_USER: admin
-    #  KEYCLOAK_PASSWORD: admin
-    #  KEYCLOAK_AVAILABILITYCHECK_ENABLED: true
-     # KEYCLOAK_AVAILABILITYCHECK_TIMEOUT: 120s
-   #   IMPORT_FILES: '/config/keycloak_config.json'
-   # volumes:
-    #  - .\keycloack_config:/config
+
+
 
