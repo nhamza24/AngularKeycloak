@@ -20,28 +20,24 @@ services:
     environment:
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
-        KK_TO_RMQ_URL: rabbitmq
-        KK_TO_RMQ_PORT: 5672
-        KK_TO_RMQ_VHOST: '/'
-        KK_TO_RMQ_EXCHANGE: amq.topic
-        KK_TO_RMQ_USERNAME: guest
-        KK_TO_RMQ_PASSWORD: guest
-        KK_TO_RMQ_USE_TLS: false
+        KK_TO_TCM_URL: endpoint
+        KK_TO_TCM_PORT: 8042
+        KK_TO_TCM_ENDPOINT: /kcUpdate
+        KK_TO_TCM_USERNAME: user
+        KK_TO_TCM_PASSWORD: password
     volumes:
       - .\keycloack_config:/config
     ports:
       - "8080:8080"
     command: start-dev
 
-  rabbitmq:
-    container_name: rabbitmq
-    image: rabbitmq:3-management
+  endpoint:
+    container_name: endpoint
+    image: 'endpoint'
+    build:
+      context: .
+      dockerfile: DockerfileEndpoint
     ports:
-      - "5672:5672"
-      - "15672:15672"
-    depends_on:
-      - keycloak
-
-
+      - "8042:8042"
 
 

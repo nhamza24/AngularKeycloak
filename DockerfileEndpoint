@@ -1,0 +1,5 @@
+FROM openjdk:11
+WORKDIR /
+ADD ./dummybackend/endpunktdemo-0.0.1.jar dummybackend/endpunktdemo-0.0.1.jar
+EXPOSE 8042
+CMD java -jar dummybackend/endpunktdemo-0.0.1.jar
