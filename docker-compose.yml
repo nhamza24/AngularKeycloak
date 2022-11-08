@@ -20,7 +20,7 @@ services:
     environment:
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
-        KK_TO_TCM_URL: endpoint
+        KK_TO_TCM_URL: backend
         KK_TO_TCM_PORT: 8042
         KK_TO_TCM_ENDPOINT: /kcUpdate
         KK_TO_TCM_USERNAME: user
@@ -32,7 +32,7 @@ services:
     command: start-dev
 
   endpoint:
-    container_name: endpoint
+    container_name: backend
     image: 'endpoint'
     build:
       context: .
