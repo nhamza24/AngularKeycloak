@@ -27,9 +27,10 @@ services:
         KK_TO_TCM_PASSWORD: password
     volumes:
       - .\keycloak-config-cli:/config
+      - .\keycloak-config-cli\keycloak_config.json:/opt/keycloak/data/import/keycloak_config.json:ro
     ports:
       - "8080:8080"
-    command: start-dev
+    entrypoint: '/opt/keycloak/bin/kc.sh start-dev --import-realm'
 
   endpoint:
     container_name: backendmock
@@ -39,5 +40,3 @@ services:
       dockerfile: DockerfileEndpoint
     ports:
       - "8042:8042"
-
-
