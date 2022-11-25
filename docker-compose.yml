@@ -13,27 +13,30 @@ services:
       - "keycloak"
   keycloak:
     container_name: keycloak
-    image: quay.io/keycloak/keycloak:19.0.3
+    image: keycloak
+    build:
+      context: .
+      dockerfile: Dockerfilekeycloak
     environment:
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
+        KK_TO_TCM_URL: backendmock
+        KK_TO_TCM_PORT: 8042
+        KK_TO_TCM_ENDPOINT: /kcUpdate
+        KK_TO_TCM_USERNAME: user
+        KK_TO_TCM_PASSWORD: password
     volumes:
-      - .\keycloack_config:/config
+      - .\keycloak-config-cli:/config
+      - .\keycloak-config-cli\keycloak_config.json:/opt/keycloak/data/import/keycloak_config.json:ro
     ports:
       - "8080:8080"
-    command: start-dev
+    entrypoint: '/opt/keycloak/bin/kc.sh start-dev --import-realm'
 
-
-  #kc_config:
-   # container_name: runImport
-   # image: adorsys/keycloak-config-cli:latest
-   # environment:
-   #   KEYCLOAK_URL: http://keycloak:8080/
-    #  KEYCLOAK_USER: admin
-    #  KEYCLOAK_PASSWORD: admin
-    #  KEYCLOAK_AVAILABILITYCHECK_ENABLED: true
-     # KEYCLOAK_AVAILABILITYCHECK_TIMEOUT: 120s
-   #   IMPORT_FILES: '/config/keycloak_config.json'
-   # volumes:
-    #  - .\keycloack_config:/config
-
+  endpoint:
+    container_name: backendmock
+    image: 'endpoint'
+    build:
+      context: .
+      dockerfile: DockerfileEndpoint
+    ports:
+      - "8042:8042"

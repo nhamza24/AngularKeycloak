@@ -1,0 +1,126 @@
+{
+  "enabled": true,
+  "realm": "TCM",
+  "roles": {
+    "realm": [
+      {
+        "name": "my_realm_role",
+        "description": "My realm role",
+        "composite": false,
+        "clientRole": false,
+        "attributes": {
+          "my added attribute": [
+            "my added attribute value",
+            "my added attribute second value"
+          ]
+        }
+      }
+    ],
+    "client": {
+      "TCM-client": [
+        {
+          "name": "VIEW",
+          "description": "View role",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+            "my added client attribute": [
+              "my added client attribute value",
+              "my added client attribute second value"
+            ]
+          }
+        },
+        {
+          "id": "adcd1c57-e1e1-4c4f-ab58-d18c718c9ad7",
+          "name": "EDIT",
+          "description": "EDIT role",
+          "composite": false,
+          "clientRole": true,
+          "attributes": {
+            "my added client attribute": [
+              "my added client attribute value",
+              "my added client attribute second value"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "clients": [
+    {
+      "clientId": "TCM-client",
+      "name": "TCM-client",
+      "description": "TCM-Client",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "my-special-client-secret",
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "tcmuser",
+      "email": "myuser@mail.de",
+      "enabled": true,
+      "firstName": "My firstname",
+      "lastName": "My lastname",
+      "attributes": {
+        "locale": [
+          "de"
+        ],
+        "realmRoles": [
+          "my_realm_role"
+        ],
+        "clientRoles": {
+          "TCM-client": [
+            "EDIT"
+          ]
+        },
+        "credentials": [
+          {
+            "type": "password",
+            "value": "1234567"
+          }
+        ]
+      }
+    },
+    {
+      "username": "tcmadmin",
+      "email": "admin@mail.de",
+      "enabled": true,
+      "firstName": "adminFirstName",
+      "lastName": "adminLastName",
+      "attributes": {
+        "locale": [
+          "de"
+        ],
+        "realmRoles": [
+          "my_realm_role"
+        ],
+        "clientRoles": {
+          "TCM-client": [
+            "VIEW",
+            "EDIT"
+          ]
+        },
+        "credentials": [
+          {
+            "type": "password",
+            "value": "1234567"
+          }
+        ]
+      }
+    }
+  ],
+  "eventsListeners": [
+    "keycloak-to-stc_tcm",
+    "jboss-logging"
+  ]
+}
+
+

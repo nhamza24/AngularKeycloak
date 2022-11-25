@@ -1,0 +1,1 @@
+docker exec -it  -u  0 keycloak  sh /config/init.sh 
